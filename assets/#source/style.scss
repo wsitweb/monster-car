@@ -9,16 +9,23 @@ html,body{
     height: 100%;
 }
 body{
-    background: url(../img/Drivous-body-bg-scaled.jpg) no-repeat;
-    background-position: top center;
+    background-image: url(../img/Drivous-body-bg-scaled.jpg);
     background-size: cover;
+    background-position: center top;
     font-family: "Montserrat", Sans-serif;
     color: #FFFFFF;
+    height: 100%;
+    overflow-x: hidden;
 }
 .wrap{
     max-width: 1100px;
     width: 100%;
     margin: 0 auto;
+}
+.wrap-more{
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto
 }
 .header{
     position: relative;
@@ -90,16 +97,17 @@ body{
     letter-spacing: 6px;
     margin-bottom: 20px;
 }
+.position_right{
+    justify-content: right;
+}
 .main{
     margin: 30px 0;
     section{
-        display: flex;
-        flex-direction: row;
-        position: relative;
         padding: 148px 0px 148px 0px;
+        background-size: auto;
+        background-repeat: no-repeat;
     }
     .head{
-        justify-content: start;
         background-size: auto;
         background-position: 100% 100%;
         background-image: url(https://ld-wp73.template-help.com/wordpress/prod_17386/v1/wp-content/uploads/2021/05/Drivous-section-1-overlay-img-1.png);
@@ -107,7 +115,7 @@ body{
         &__content{
             display: flex;
             flex-direction: column;
-            justify-content: start;
+            justify-content: end;
         }
         &__subtitle{
             font-size: 24px;
@@ -142,9 +150,14 @@ body{
         }
     }
     .about{
-        justify-content: right;
+        background-position: 0% 50%;
+        background-image: url(https://ld-wp73.template-help.com/wordpress/prod_17386/v1/wp-content/uploads/2021/05/Drivous-section-2-overlay-img-1.png);
         &__content{
+            display: flex;
             justify-content: right;
+        }
+        &__position{
+            width: fit-content;
         }
         &__subtitle{
         }
@@ -177,16 +190,229 @@ body{
             }
         }
     }
+    .demo{
+        background-image: url(//ld-wp73.template-help.com/wordpress/prod_17386/v1/wp-content/uploads/2021/05/drivous-premium-img.png);
+        background-position: center 16%;
+        background-repeat: no-repeat;
+        &__image{
+            max-width: 1700px;
+            width: 100%;
+            margin: 0 auto;
+            display: block;
+            mask-image: linear-gradient(black 80%,transparent);
+        }
+    }
     .specs{
-
+        background-image: url("https://ld-wp73.template-help.com/wordpress/prod_17386/v1/wp-content/uploads/2021/05/Drivous-section-4-overlay-img-1.png");
+        background-position: right center;
+        &__table{
+            position: relative;
+            margin-left: 90px;
+            padding-top: 30px;
+            list-style: none;
+            &::before{
+                content: "";
+                width: 63px;
+                height: 2px;
+                display: block;
+                background: #B10B1A;
+                position: absolute;
+                left: -90px;
+                top: 30px;
+                margin: 13px 0;
+            }
+        }
+        &__table-item{
+            position: relative;
+            padding: 0 0 10px 0;
+            max-width: 453px;
+            width: 100%;
+            &::before{
+                content: '';
+                width: 100%;
+                height: 1px;
+                background-color: #FFFFFF1A;
+                position: absolute;
+                bottom: 0;
+            }
+        }
+        &__table-item:not(:first-child){
+            margin-top: 25px;
+        }
+        &__table-title{
+            display: inline-block;
+            width: 50%;
+            font-weight: 300;
+            font-size: 14px;
+            margin-right: -5px;
+            text-align: left;
+        }
+        &__table-text{
+            display: inline-block;
+            width: 50%;
+            font-size: 14px;
+            font-weight: 300;
+            text-align: right;
+        }
     }
     .gallery{
-
+        &__content{
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        &__block{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 50%;
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transform: scale(1.1);
+                    transition: transform 0.5s;
+                    &:hover{
+                        transform: scale(1.2);
+                    }
+                }
+        }
+        &__img{
+            overflow: hidden;
+            flex: 1 1 auto;
+            width: 50%;
+            object-fit: cover;
+            @media(max-width: 1024px){
+                width: fit-content;
+            }
+        }
     }
     .characteristic{
-
+        &__content{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        &__block{
+            width: (1100px / 3);
+            text-align: center;
+        }
+        &__bg{
+            position: relative;
+            top: 39%;
+            z-index: -1;
+            opacity: 50%;
+        }
+        &__title{
+            color: #242A32;
+            font-size: 80px;
+            font-weight: 700;
+        }
+        &__number{
+            color: #B10B1A;
+            font-size: 80px;
+            font-weight: 700;
+            line-height: 80px;
+        }
+        &__description{
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            line-height: 100px;
+            letter-spacing: 5px;
+        }
+        &__text{}
     }
     .form{
-
+        padding-top: 0;
+        &__content{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            flex-wrap: wrap;
+            max-width: 640px;
+            width: 100%;
+            form{
+                display: inline-block;
+                width: 100%;
+                input{
+                    display: block;
+                    align-self: center;
+                    background-color: #00000000;
+                    color: #FFFFFF;
+                    line-height: 2.83em;
+                    border-style: solid;
+                    border-width: 0px 0px 2px 0px;
+                    border-color: #FFFFFF;
+                    width: 100%;
+                    margin: 0 auto;
+                    &:focus{
+                        outline:none;
+                    }
+                }
+                button{
+                    margin: 10% auto 0 auto;
+                    display: block;
+                    &:hover{
+                        background: #B10B1A;
+                    }
+                }
+            }
+        }
+        &__title{
+            font-size: 48px;
+            text-transform: uppercase;
+            line-height: 1.25em;
+            letter-spacing: 9px;
+            max-width: 400px;
+            text-align: center;
+        }
+    }
+}
+footer{
+    .footer{
+        background-color: #242A32;
+        padding: 8px 30px 8px 30px;
+        &__content{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            height: 36px;
+        }
+        &__copy{
+            display: inline-block;
+            height: 100%;
+            line-height: 36px;
+        }
+        &__social{
+            display: flex;
+            gap: 10px;
+            &-item{
+                display: inline-block;
+                width: 36px;
+                height: 36px;
+                position: relative;
+                border-radius: 50%;
+                transition: background .2s;
+                &:hover{
+                    background-color: #B10B1A;
+                }
+                a{
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    text-decoration: none;
+                    color: white;
+                    i{
+                        position: absolute;
+                        left: 50%;
+                        top: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+            }
+        }
     }
 }
