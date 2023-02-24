@@ -501,3 +501,16 @@ footer .footer__social-item a i {
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #363636;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #B10B1A;
+  border-radius: 10px;
+}
