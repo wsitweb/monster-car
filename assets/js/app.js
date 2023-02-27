@@ -1,6 +1,12 @@
 let number_one_element =  document.querySelector('.number_one'),
     number_two_element = document.querySelector('.number_two'),
-    number_three_element = document.querySelector('.number_three');
+    number_three_element = document.querySelector('.number_three'),
+    header = document.querySelector('.header'),
+    body = document.querySelector('body'),
+    headElement = document.querySelector('.head'),
+    aboutElement = document.querySelector('.about'),
+    specsElement = document.querySelector('.specs')
+    ;
 
 
     function elementInViewport(el){
@@ -11,6 +17,14 @@ let number_one_element =  document.querySelector('.number_one'),
             (bounds.left + bounds.width > 0) && // Правее левой
             (window.innerWidth - bounds.left > 0)// Левее правой
         );
+    }
+    function elementInViewportTwo(el){
+        var bounds = el.getBoundingClientRect();
+        let positionTop =(bounds.top + (bounds.height / 2) - window.innerHeight) * -1;
+        let calcTransformPosition = Math.floor(positionTop / 10);
+        if(calcTransformPosition > 0){
+            return (calcTransformPosition)
+        }else{}
     }
 
     function counter(number, element, second){
@@ -57,15 +71,40 @@ let number_one_element =  document.querySelector('.number_one'),
                 }
                     setTimeout(get, second);
             }
-    let check = 0;
+    let check = 0,
+        checkTwo = 0;
 
 document.addEventListener("scroll", (e) => {
     var el = document.querySelector(".characteristic");
     var inViewport = elementInViewport(el);
+
+    if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i
+    .test(navigator.userAgent)){
+        headElement.style.backgroundPositionY = `${elementInViewportTwo(headElement)/2}%`
+        aboutElement.style.backgroundPositionY = `${elementInViewportTwo(aboutElement) /1.1 + 30}%`
+        specsElement.style.backgroundPositionY = `${elementInViewportTwo(specsElement) /2.5 + 40}%`
+    }
+
     if(inViewport && check == 0){
         counter(405, number_one_element, 1);
         counter(7, number_two_element, 7);
         counter(3.5, number_three_element, 5);
         check++;
     }
+    if(window.innerWidth <= 692){
+        if(Math.floor(window.scrollY) >= 150 && checkTwo == 0){
+            header.style.backgroundColor = '#15181F';
+            checkTwo++;
+        }else if (Math.floor(window.scrollY) <= 150 && checkTwo == 1){
+            checkTwo--;
+            header.style.backgroundColor = '';
+        }
+    }
+    
+});
+
+document.querySelector('.header__button-burger').addEventListener('click', (event) => {
+    event.target.closest('.header').classList.toggle('active');
+    console.log(event.target.closest('.header'));
+    body.classList.toggle('disable');
 });
