@@ -328,12 +328,23 @@ body{
             color: #242A32;
             font-size: 80px;
             font-weight: 700;
+            text-align: center;
         }
         &__number{
             color: #B10B1A;
             font-size: 80px;
             font-weight: 700;
             line-height: 80px;
+            color: #B10B1A;
+
+            font-size: 0px;
+
+            animation-timing-function: cubic-bezier(0,1,0,1);
+            animation-fill-mode: forwards;
+            &::before{
+                content: counter(ms);
+                font-size: 80px;
+            }
         }
         &__description{
             font-size: 14px;
@@ -640,3 +651,27 @@ footer{
     background: #B10B1A;
     border-radius: 10px;
 }
+
+@property --numberOne {
+    inherits: false; 
+    syntax: '<integer>';
+    initial-value: 250;
+}
+@property --numberTwo {
+    inherits: false; 
+    syntax: '<integer>';
+    initial-value: 7;
+}
+@property --numberThree {
+    inherits: false; 
+    syntax: '<integer>';
+    initial-value: 4;
+}
+
+@keyframes count {
+    0% {
+        --numberOne: 0;
+        --numberTwo: 0;
+        --numberThree: 0;
+    }
+  }
