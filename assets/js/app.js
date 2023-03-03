@@ -1,3 +1,4 @@
+'use strict'
 let elementsNum = document.querySelectorAll('.characteristic__number'),
     header = document.querySelector('.header'),
     body = document.querySelector('body'),
@@ -48,7 +49,6 @@ document.addEventListener("scroll", (e) => {
             header.style.backgroundColor = '';
         }
     }
-    console.log(elementInViewport(elementsNum[0]));
     if(elementInViewport(elementsNum[0])){
         elementsNum[0].style.cssText = 'counter-reset: ms var(--numberOne); animation: count 4s;';
         elementsNum[1].style.cssText = 'counter-reset: ms var(--numberTwo); animation: count 4s;';

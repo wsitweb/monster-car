@@ -773,3 +773,33 @@ footer .footer__social-item a i {
     --numberThree: 0;
   }
 }
+.footer__authors {
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
+}
+.footer__authors h4 {
+  text-transform: uppercase;
+  color: #B10B1A;
+  display: block;
+  border-bottom: 1px solid #B10B1A;
+  letter-spacing: 6px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+.footer__authors ul {
+  padding-left: 30px;
+}
+.footer__authors ul li {
+  display: inline-block;
+  margin-right: 8px;
+}
+.footer__authors ul li::before {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 30px;
+  background-color: #FFFFFF;
+  margin-right: 8px;
+}

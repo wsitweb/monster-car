@@ -672,3 +672,32 @@ footer{
         --numberThree: 0;
     }
   }
+
+  .footer__authors{
+    order: -1;
+    h4{
+        text-transform: uppercase;
+        color: #B10B1A;
+        display: block;
+        border-bottom: 1px solid #B10B1A;
+        letter-spacing: 6px;
+        text-align: left;
+        margin-bottom: 10px;
+    }
+    ul{
+        padding-left: 30px;
+        li{
+            display: inline-block;
+            margin-right: 8px;
+            &::before{
+                content: '';
+                display: inline-block;
+                width: 10px;
+                height: 10px;
+                border-radius: 30px;
+                background-color: #FFFFFF;
+                margin-right: 8px;
+            }
+        }
+    }
+  }
