@@ -623,9 +623,6 @@ footer{
             &__title{
                 font-size: 60px;
             }
-            &__number{
-                font-size: 60px;
-            }
             &__description{
                 line-height: 50px;
             }
@@ -655,7 +652,7 @@ footer{
 @property --numberOne {
     inherits: false; 
     syntax: '<integer>';
-    initial-value: 250;
+    initial-value: 405;
 }
 @property --numberTwo {
     inherits: false; 

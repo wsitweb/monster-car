@@ -721,9 +721,6 @@ footer .footer__social-item a i {
   .main .characteristic__title {
     font-size: 60px;
   }
-  .main .characteristic__number {
-    font-size: 60px;
-  }
   .main .characteristic__description {
     line-height: 50px;
   }
@@ -750,7 +747,7 @@ footer .footer__social-item a i {
 @property --numberOne {
   inherits: false;
   syntax: "<integer>";
-  initial-value: 250;
+  initial-value: 405;
 }
 @property --numberTwo {
   inherits: false;
